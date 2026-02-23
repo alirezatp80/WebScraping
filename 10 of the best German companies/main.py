@@ -115,6 +115,10 @@ def main():
         headquarters = company.get('headquarters')
         
         my_companies.add_company(rank , name , industry,revenue,employees,headquarters)
+        
     database = Database('best_number_employees')
     database.Save_data(my_companies.get_all_large_companies())
-main()
+
+
+if __name__ == "__main__":
+    main()
