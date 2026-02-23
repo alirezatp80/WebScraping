@@ -53,6 +53,8 @@ class Company:
     def get_teb_best_employees(self):
         ten_best = sorted(Company.list_companies , key=lambda company:int(company.employees),reverse=True)[:10]
         return  ten_best
+    def get_all_large_companies(self):
+        return Company.list_companies
             
     
 class Scraper:
@@ -114,5 +116,5 @@ def main():
         
         my_companies.add_company(rank , name , industry,revenue,employees,headquarters)
     database = Database('best_number_employees')
-    database.Save_data(my_companies.get_teb_best_employees())
+    database.Save_data(my_companies.get_all_large_companies())
 main()
